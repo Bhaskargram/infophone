@@ -36,173 +36,186 @@ The Mobile Number Detector is a Python-based application designed to:
    pkg update && pkg upgrade
 
 
-<h1>Mobile Number Detector</h1>
+# Mobile Number Detector
 
-        <h2>Purpose</h2>
-        <p>The Mobile Number Detector is a Python-based application designed to:</p>
-        <ul>
-            <li>Extract detailed information about mobile numbers, including location and registration details.</li>
-            <li>Check website details and extract email addresses.</li>
-            <li>Provide a user-friendly interface with interactive features.</li>
-        </ul>
+## Purpose
+The Mobile Number Detector is a Python-based application designed to:
+- Extract detailed information about mobile numbers, including location and registration details.
+- Check website details and extract email addresses.
+- Provide a user-friendly interface with interactive features.
 
-        <h2>Features</h2>
-        <ul>
-            <li>Phone Number Location Extractor</li>
-            <li>Website Details Checker</li>
-            <li>Email Address Extractor</li>
-            <li>Interactive UI with a skull graphic</li>
-        </ul>
+## Features
+- Phone Number Location Extractor
+- Website Details Checker
+- Email Address Extractor
+- Interactive UI with a skull graphic
 
-        <h2>Installation Instructions</h2>
+## Installation Instructions
 
-        <h3>Termux (Android)</h3>
-        <ol>
-            <li><strong>Install Termux:</strong> Download and install Termux from the <a href="https://play.google.com/store/apps/details?id=com.termux">Google Play Store</a> or <a href="https://f-droid.org/packages/com.termux/">F-Droid</a>.</li>
-            <li><strong>Update Termux Packages:</strong>
-                <pre><code>pkg update && pkg upgrade</code></pre>
-            </li>
-            <li><strong>Install Python:</strong>
-                <pre><code>pkg install python</code></pre>
-            </li>
-            <li><strong>Install Git:</strong>
-                <pre><code>pkg install git</code></pre>
-            </li>
-            <li><strong>Clone the Repository:</strong>
-                <pre><code>git clone https://github.com/Bhaskargram/infophone/</code></pre>
-                <pre><code>cd infophone</code></pre>
-            </li>
-            <li><strong>Set Up a Virtual Environment:</strong>
-                <pre><code>python -m venv venv</code></pre>
-                <pre><code>source venv/bin/activate</code></pre>
-            </li>
-            <li><strong>Install Dependencies:</strong>
-                <pre><code>pip install -r requirements.txt</code></pre>
-            </li>
-            <li><strong>Create and Configure <code>.env</code> File:</strong>
-                <pre><code>nano .env</code></pre>
-                <p>Add the following lines:</p>
-                <pre><code>NUMVERIFY_API_KEY=eeaa381b2e5b7ebec2645b13d7e88562
-GOOGLE_MAPS_API_KEY=your_google_maps_api_key</code></pre>
-            </li>
-            <li><strong>Run the Application:</strong>
-                <pre><code>python src/app.py</code></pre>
-            </li>
-        </ol>
+### Termux (Android)
+1. **Install Termux:** Download and install Termux from the [Google Play Store](https://play.google.com/store/apps/details?id=com.termux) or [F-Droid](https://f-droid.org/packages/com.termux/).
+2. **Update Termux Packages:**
+    ```bash
+    pkg update && pkg upgrade
+    ```
+3. **Install Python:**
+    ```bash
+    pkg install python
+    ```
+4. **Install Git:**
+    ```bash
+    pkg install git
+    ```
+5. **Clone the Repository:**
+    ```bash
+    git clone https://github.com/Bhaskargram/infophone/
+    cd infophone
+    ```
+6. **Set Up a Virtual Environment:**
+    ```bash
+    python -m venv venv
+    source venv/bin/activate
+    ```
+7. **Install Dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+8. **Run the Application:**
+    ```bash
+    python src/app.py
+    ```
 
-        <h3>MacBook (macOS)</h3>
-        <ol>
-            <li><strong>Install Homebrew (if not installed):</strong>
-                <pre><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></pre>
-            </li>
-            <li><strong>Install Python:</strong>
-                <pre><code>brew install python</code></pre>
-            </li>
-            <li><strong>Install Git:</strong>
-                <pre><code>brew install git</code></pre>
-            </li>
-            <li><strong>Clone the Repository:</strong>
-                <pre><code>git clone https://github.com/Bhaskargram/infophone/</code></pre>
-                <pre><code>cd infophone</code></pre>
-            </li>
-            <li><strong>Set Up a Virtual Environment:</strong>
-                <pre><code>python -m venv venv</code></pre>
-                <pre><code>source venv/bin/activate</code></pre>
-            </li>
-            <li><strong>Install Dependencies:</strong>
-                <pre><code>pip install -r requirements.txt</code></pre>
-            </li>
-            <li><strong>Create and Configure <code>.env</code> File:</strong>
-                <pre><code>nano .env</code></pre>
-                <p>Add your API keys:</p>
-                <pre><code>NUMVERIFY_API_KEY=eeaa381b2e5b7ebec2645b13d7e88562
-GOOGLE_MAPS_API_KEY=your_google_maps_api_key</code></pre>
-            </li>
-            <li><strong>Run the Application:</strong>
-                <pre><code>python src/app.py</code></pre>
-            </li>
-        </ol>
+    ### If you have MAC, Windows, Linux you can use your own Numverify API Key, Instructions are below.
 
-        <h3>Linux (Ubuntu, Kali Linux)</h3>
-        <ol>
-            <li><strong>Update Packages:</strong>
-                <pre><code>sudo apt update && sudo apt upgrade</code></pre>
-            </li>
-            <li><strong>Install Python and Git:</strong>
-                <pre><code>sudo apt install python3 python3-venv git</code></pre>
-            </li>
-            <li><strong>Clone the Repository:</strong>
-                <pre><code>git clone https://github.com/Bhaskargram/infophone/</code></pre>
-                <pre><code>cd infophone</code></pre>
-            </li>
-            <li><strong>Set Up a Virtual Environment:</strong>
-                <pre><code>python3 -m venv venv</code></pre>
-                <pre><code>source venv/bin/activate</code></pre>
-            </li>
-            <li><strong>Install Dependencies:</strong>
-                <pre><code>pip install -r requirements.txt</code></pre>
-            </li>
-            <li><strong>Create and Configure <code>.env</code> File:</strong>
-                <pre><code>nano .env</code></pre>
-                <p>Add your API keys:</p>
-                <pre><code>NUMVERIFY_API_KEY=eeaa381b2e5b7ebec2645b13d7e88562
-GOOGLE_MAPS_API_KEY=your_google_maps_api_key</code></pre>
-            </li>
-            <li><strong>Run the Application:</strong>
-                <pre><code>python src/app.py</code></pre>
-            </li>
-        </ol>
+### MacBook (macOS)
+1. **Install Homebrew (if not installed):**
+    ```bash
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    ```
+2. **Install Python:**
+    ```bash
+    brew install python
+    ```
+3. **Install Git:**
+    ```bash
+    brew install git
+    ```
+4. **Clone the Repository:**
+    ```bash
+    git clone https://github.com/Bhaskargram/infophone/
+    cd infophone
+    ```
+5. **Set Up a Virtual Environment:**
+    ```bash
+    python -m venv venv
+    source venv/bin/activate
+    ```
+6. **Install Dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+7. **Create and Configure `.env` File:**
+    ```bash
+    nano .env
+    ```
+    Add your API keys:
+    ```env
+    NUMVERIFY_API_KEY=Your_numverify_api_key
+    GOOGLE_MAPS_API_KEY=your_google_maps_api_key
+    ```
+8. **Run the Application:**
+    ```bash
+    python src/app.py
+    ```
 
-        <h3>Windows</h3>
-        <ol>
-            <li><strong>Install Python (if not installed):</strong>
-                <p>Download and install Python from <a href="https://www.python.org/downloads/">python.org</a>. Make sure to check the option to add Python to your PATH during installation.</p>
-            </li>
-            <li><strong>Install Git (if not installed):</strong>
-                <p>Download and install Git from <a href="https://git-scm.com/download/win">git-scm.com</a>.</p>
-            </li>
-            <li><strong>Open Command Prompt or PowerShell:</strong></li>
-            <li><strong>Clone the Repository:</strong>
-                <pre><code>git clone https://github.com/Bhaskargram/infophone/</code></pre>
-                <pre><code>cd infophone</code></pre>
-            </li>
-            <li><strong>Set Up a Virtual Environment:</strong>
-                <pre><code>python -m venv venv</code></pre>
-                <pre><code>.\venv\Scripts\activate</code></pre>
-            </li>
-            <li><strong>Install Dependencies:</strong>
-                <pre><code>pip install -r requirements.txt</code></pre>
-            </li>
-            <li><strong>Create and Configure <code>.env</code> File:</strong>
-                <pre><code>notepad .env</code></pre>
-                <p>Add your API keys:</p>
-                <pre><code>NUMVERIFY_API_KEY=eeaa381b2e5b7ebec2645b13d7e88562
-GOOGLE_MAPS_API_KEY=your_google_maps_api_key</code></pre>
-            </li>
-            <li><strong>Run the Application:</strong>
-                <pre><code>python src/app.py</code></pre>
-            </li>
-        </ol>
+### Linux (Ubuntu, Kali Linux)
+1. **Update Packages:**
+    ```bash
+    sudo apt update && sudo apt upgrade
+    ```
+2. **Install Python and Git:**
+    ```bash
+    sudo apt install python3 python3-venv git
+    ```
+3. **Clone the Repository:**
+    ```bash
+    git clone https://github.com/Bhaskargram/infophone/
+    cd infophone
+    ```
+4. **Set Up a Virtual Environment:**
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate
+    ```
+5. **Install Dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+6. **Create and Configure `.env` File:**
+    ```bash
+    nano .env
+    ```
+    Add your API keys:
+    ```env
+    NUMVERIFY_API_KEY=Your_numverify_api_key
+    GOOGLE_MAPS_API_KEY=your_google_maps_api_key
+    ```
+7. **Run the Application:**
+    ```bash
+    python src/app.py
+    ```
 
-        <h2>Application Overview</h2>
+### Windows
+1. **Install Python (if not installed):**
+    Download and install Python from [python.org](https://www.python.org/downloads/). Make sure to check the option to add Python to your PATH during installation.
+2. **Install Git (if not installed):**
+    Download and install Git from [git-scm.com](https://git-scm.com/download/win).
+3. **Open Command Prompt or PowerShell:**
+4. **Clone the Repository:**
+    ```bash
+    git clone https://github.com/Bhaskargram/infophone/
+    cd infophone
+    ```
+5. **Set Up a Virtual Environment:**
+    ```bash
+    python -m venv venv
+    .\venv\Scripts\activate
+    ```
+6. **Install Dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+7. **Create and Configure `.env` File:**
+    ```bash
+    notepad .env
+    ```
+    Add your API keys:
+    ```env
+    NUMVERIFY_API_KEY=Your_numverify_api_key
+    GOOGLE_MAPS_API_KEY=your_google_maps_api_key
+    ```
+8. **Run the Application:**
+    ```bash
+    python src/app.py
+    ```
 
-        <h3>Main Menu</h3>
-        <p>When the application starts, it will draw a skull using the <code>turtle</code> graphics module and then present the main menu with the following options:</p>
-        <ul>
-            <li><strong>Phone Number Location Extractor:</strong> Input a phone number to get detailed information, including location.</li>
-            <li><strong>Website Details Checker:</strong> Input a domain to get details about the website.</li>
-            <li><strong>Support:</strong> Opens your default email client with a pre-filled email address for support.</li>
-            <li><strong>Exit:</strong> Close the application.</li>
-        </ul>
+## Application Overview
 
-        <h3>Sub-Menu</h3>
-        <p>After selecting an option, you can return to the main menu or exit the application via the sub-menu.</p>
+### Main Menu
+When the application starts, it will draw a skull using the `turtle` graphics module and then present the main menu with the following options:
+- **Phone Number Location Extractor:** Input a phone number to get detailed information, including location.
+- **Website Details Checker:** Input a domain to get details about the website.
+- **Support:** Opens your default email client with a pre-filled email address for support.
+- **Exit:** Close the application.
 
-        <h2>License</h2>
-        <p>This project is licensed under the MIT License - see the <a href="LICENSE">LICENSE</a> file for details.</p>
+### Sub-Menu
+After selecting an option, you can return to the main menu or exit the application via the sub-menu.
 
-        <h2>Contact</h2>
-        <p>For support, please email: <a href="mailto:bhaskarjs.md@finixia.in">bhaskarjs.md@finixia.in</a></p>
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-        <p>Visit the <a href="https://github.com/Bhaskargram/infophone/">GitHub Repository</a> for more information and updates.</p>
-    </div>
+## Contact
+For support, please email: [bhaskarjs.md@finixia.in](mailto:bhaskarjs.md@finixia.in)
+
+Visit the [GitHub Repository](https://github.com/Bhaskargram/infophone/) for more information and updates.
+
