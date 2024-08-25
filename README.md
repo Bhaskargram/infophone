@@ -6,7 +6,7 @@
 
 <h2>Project Screenshots:</h2>
 
-<img src="https://i.postimg.cc/W1WQGsW7/Screenshot-2024-08-25-160533.png" alt="project-screenshot" width="1080" height="1920/">
+<img src="https://i.postimg.cc/W1WQGsW7/Screenshot-2024-08-25-160533.png" alt="project-screenshot" width="500" height="500/">
 
 # Mobile Number Detector
 
