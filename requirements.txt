@@ -1,0 +1,4 @@
+requests
+python-whois
+python-dotenv
+Pillow  # For handling images in Tkinter
