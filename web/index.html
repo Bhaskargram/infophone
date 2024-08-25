@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Infophone is a Python-based application that extracts detailed information about mobile numbers, checks website details, and extracts email addresses with an interactive user interface.">
+    <meta name="author" content="Bhaskargram">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Infophone by Bhaskargram">
+    <meta property="og:description" content="A Python-based application for extracting detailed information about mobile numbers, checking website details, and extracting email addresses.">
+    <meta property="og:image" content="https://i.postimg.cc/pLfHKNNG/Bhaskargram.png">
+    <meta property="og:url" content="https://github.com/Bhaskargram/infophone/">
+    <meta property="og:type" content="website">
+
+    <title>Infophone by Bhaskargram</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        header {
+            background: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px 8px 0 0;
+            text-align: center;
+            position: relative;
+        }
+        header img {
+            max-width: 500px;
+            height: auto;
+            position: relative;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+        h3 {
+            color: #555;
+        }
+        code {
+            background: #f4f4f4;
+            border-radius: 3px;
+            padding: 2px 4px;
+            font-size: 85%;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 3px;
+            overflow: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            position: relative;
+        }
+        .copy-button {
+            background: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 0.9rem;
+        }
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        ol {
+            margin-left: 20px;
+        }
+        .footer {
+            text-align: center;
+            margin: 20px 0;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+        }
+        .footer a {
+            color: #4CAF50;
+        }
+
+
+        .welcome-message {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #4CAF50;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            z-index: 9999;
+            display: none;
+        }
+        .welcome-message.active {
+            display: block;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            z-index: 10000;
+            text-align: center;
+        }
+        .popup.active {
+            display: block;
+        }
+        .popup .close-btn {
+            background: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+            header {
+                font-size: 1.5rem;
+            }
+        }
+        .Bh{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://i.postimg.cc/pLfHKNNG/Bhaskargram.png" alt="Bhaskargram Logo">
+        <h1>Infophone by Bhaskargram</h1>
+    </header>
+        <marquee class="Bh">Welcome to Bhaskargram by Infophone! Check out the latest updates and features. Contact us at <a  href="mailto:bhaskarjs.md@finixia.in" target="_blank">bhaskarjs.md@finixia.in</a> for support.</marquee>
+
+    <div class="popup" id="popupBanner">
+        <h2>Welcome to Bhaskargram!</h2>
+        <p>You've reached the Infophone website.</p>
+        <button class="close-btn" onclick="closePopup()">Close</button>
+    </div>
+
+    <div class="container">
+        <h2>Overview</h2>
+        <p>Infophone is a Python-based application designed to:</p>
+        <ul>
+            <li>Extract detailed information about mobile numbers, including location and registration details.</li>
+            <li>Check website details and extract email addresses.</li>
+            <li>Provide a user-friendly interface with interactive features.</li>
+        </ul>
+
+        <h2>Features</h2>
+        <ul>
+            <li>Phone Number Location Extractor</li>
+            <li>Website Details Checker</li>
+            <li>Email Address Extractor</li>
+            <li>Interactive UI with a skull graphic</li>
+        </ul>
+
+        <h2>Installation Instructions</h2>
+
+        <h3>Termux (Android)</h3>
+        <ol>
+            <li><strong>Install Termux:</strong> Download and install Termux from the <a href="https://play.google.com/store/apps/details?id=com.termux">Google Play Store</a> or <a href="https://f-droid.org/packages/com.termux/">F-Droid</a>.</li>
+            <li><strong>Update Termux Packages:</strong>
+                <pre><code id="termux-update">pkg update && pkg upgrade</code>
+                <button class="copy-button" onclick="copyCodeToClipboard('termux-update')">Copy Code</button></pre>
+            </li>
+            <li><strong>Install Python:</strong>
+                <pre><code id="termux-python">pkg install python</code>
+                <button class="copy-button" onclick="copyCodeToClipboard('termux-python')">Copy Code</button></pre>
+            </li>
+            <li><strong>Install Git:</strong>
+                <pre><code id="termux-git">pkg install git</code>
+                <button class="copy-button" onclick="copyCodeToClipboard('termux-git')">Copy Code</button></pre>
+            </li>
+            <li><strong>Clone the Repository:</strong>
+                <pre><code id="termux-clone">git clone https://github.com/Bhaskargram/infophone/</code>
+                <button class="copy-button" onclick="copyCodeToClipboard('termux-clone')">Copy Code</button></pre>
+                <pre><code id="termux-cd">cd infophone</code>
+                <button class="copy-button" onclick="copyCodeToClipboard('termux-cd')">Copy Code</button></pre>
+            </li>
+            <li><strong>Set Up a Virtual Environment:</strong>
+                <pre><code id="termux-venv">python -m venv venv</code>
+                <button class="copy-button" onclick="copyCodeToClipboard('termux-venv')">Copy Code</button></pre>
+                <pre><code id="termux-activate">source venv/bin/activate</code>
+                <button class="copy-button" onclick="copyCodeToClipboard('termux-activate')">Copy Code</button></pre>
+            </li>
+            <li><strong>Install Dependencies:</strong>
+                <pre><code id="termux-install">pip install -r requirements.txt</code>
+                <button class="copy-button" onclick="copyCodeToClipboard('termux-install')">Copy Code</button></pre>
+            </li>
+        </ol>
+
+        <h3>Windows</h3>
+        <ol>
+            <li><strong>Install Git:</strong> Download and install Git from the <a href="https://git-scm.com/download/win">official website</a>.</li>
+            <li><strong>Clone the Repository:</strong>
+                <pre><code id="windows-clone">git clone https://github.com/Bhaskargram/infophone/</code>
+                <button class="copy-button" onclick="copyCodeToClipboard('windows-clone')">Copy Code</button></pre>
+                <pre><code id="windows-cd">cd infophone</code>
+                <button class="copy-button" onclick="copyCodeToClipboard('windows-cd')">Copy Code</button></pre>
+            </li>
+            <li><strong>Set Up a Virtual Environment:</strong>
+                <pre><code id="windows-venv">python -m venv venv</code>
+                <button class="copy-button" onclick="copyCodeToClipboard('windows-venv')">Copy Code</button></pre>
+                <pre><code id="windows-activate">venv\Scripts\activate</code>
+                <button class="copy-button" onclick="copyCodeToClipboard('windows-activate')">Copy Code</button></pre>
+            </li>
+            <li><strong>Install Dependencies:</strong>
+                <pre><code id="windows-install">pip install -r requirements.txt</code>
+                <button class="copy-button" onclick="copyCodeToClipboard('windows-install')">Copy Code</button></pre>
+            </li>
+        </ol>
+
+        <h3>macOS</h3>
+        <ol>
+            <li><strong>Install Git:</strong> Install Git using Homebrew by running:
+                <pre><code id="mac-install-git">brew install git</code>
+                <button class="copy-button" onclick="copyCodeToClipboard('mac-install-git')">Copy Code</button></pre>
+            </li>
+            <li><strong>Clone the Repository:</strong>
+                <pre><code id="mac-clone">git clone https://github.com/Bhaskargram/infophone/</code>
+                <button class="copy-button" onclick="copyCodeToClipboard('mac-clone')">Copy Code</button></pre>
+                <pre><code id="mac-cd">cd infophone</code>
+                <button class="copy-button" onclick="copyCodeToClipboard('mac-cd')">Copy Code</button></pre>
+            </li>
+            <li><strong>Set Up a Virtual Environment:</strong>
+                <pre><code id="mac-venv">python3 -m venv venv</code>
+                <button class="copy-button" onclick="copyCodeToClipboard('mac-venv')">Copy Code</button></pre>
+                <pre><code id="mac-activate">source venv/bin/activate</code>
+                <button class="copy-button" onclick="copyCodeToClipboard('mac-activate')">Copy Code</button></pre>
+            </li>
+            <li><strong>Install Dependencies:</strong>
+                <pre><code id="mac-install">pip install -r requirements.txt</code>
+                <button class="copy-button" onclick="copyCodeToClipboard('mac-install')">Copy Code</button></pre>
+            </li>
+        </ol>
+
+        <h3>Linux</h3>
+        <ol>
+            <li><strong>Install Git:</strong>
+                <pre><code id="linux-install-git">sudo apt-get update</code>
+                <button class="copy-button" onclick="copyCodeToClipboard('linux-install-git')">Copy Code</button></pre>
+                <pre><code id="linux-install-git2">sudo apt-get install git</code>
+                <button class="copy-button" onclick="copyCodeToClipboard('linux-install-git2')">Copy Code</button></pre>
+            </li>
+            <li><strong>Clone the Repository:</strong>
+                <pre><code id="linux-clone">git clone https://github.com/Bhaskargram/infophone/</code>
+                <button class="copy-button" onclick="copyCodeToClipboard('linux-clone')">Copy Code</button></pre>
+                <pre><code id="linux-cd">cd infophone</code>
+                <button class="copy-button" onclick="copyCodeToClipboard('linux-cd')">Copy Code</button></pre>
+            </li>
+            <li><strong>Set Up a Virtual Environment:</strong>
+                <pre><code id="linux-venv">python3 -m venv venv</code>
+                <button class="copy-button" onclick="copyCodeToClipboard('linux-venv')">Copy Code</button></pre>
+                <pre><code id="linux-activate">source venv/bin/activate</code>
+                <button class="copy-button" onclick="copyCodeToClipboard('linux-activate')">Copy Code</button></pre>
+            </li>
+            <li><strong>Install Dependencies:</strong>
+                <pre><code id="linux-install">pip install -r requirements.txt</code>
+                <button class="copy-button" onclick="copyCodeToClipboard('linux-install')">Copy Code</button></pre>
+            </li>
+        </ol>
+
+        <h2>Commands</h2>
+        <h3>Phone Number Location Extractor</h3>
+        <pre><code id="command1">python src/app.py</code>
+        <button class="copy-button" onclick="copyCodeToClipboard('command1')">Copy Code</button></pre>
+
+        <h3>Website Details Checker</h3>
+        <pre><code id="command2">python src/app.py</code>
+        <button class="copy-button" onclick="copyCodeToClipboard('command2')">Copy Code</button></pre>
+
+        <h2>Notes</h2>
+        <ul>
+            <li>Ensure Python 3.6 or above is installed for compatibility.</li>
+            <li>Run all commands from the project's root directory.</li>
+            <li>For more help, visit the <a href="https://github.com/Bhaskargram/infophone/">GitHub Repository</a>.</li>
+            <li>Support Email: <a href="mailto:bhaskarjs.md@finixia.in">bhaskarjs.md@finixia.in</a></li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <p>Created by Bhaskargram | <a href="https://github.com/Bhaskargram/infophone/">GitHub</a></p>
+    </div>
+
+    <script>
+        function copyCodeToClipboard(id) {
+            const code = document.getElementById(id).textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                alert('Code copied to clipboard!');
+            }, (err) => {
+                console.error('Failed to copy text: ', err);
+            });
+        }
+
+        function closePopup() {
+            document.getElementById('popupBanner').classList.remove('active');
+        }
+
+        window.onload = function() {
+            document.getElementById('welcomeMessage').classList.add('active');
+            document.getElementById('popupBanner').classList.add('active');
+        };
+    </script>
+</body>
+</html>
